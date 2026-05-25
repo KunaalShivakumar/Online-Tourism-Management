@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+        <a class="navbar-brand" href="<?php echo base_url ?>">
+            Explore India
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars ml-1"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav text-uppercase ml-auto py-4 py-lg-0">
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>?page=packages">Packages</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>#about">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>#contact">Contact</a></li>
+                <?php if($_settings->userdata('id') > 0): ?>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>?page=my_account">My Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?php echo base_url ?>logout.php">Logout</a></li>
+                <?php else: ?>
+                    <li class="nav-item"><a class="nav-link" href="javascript:void(0)" onclick="uni_modal('', '<?php echo base_url ?>login.php', 'large')">Login</a></li>
+                <?php endif; ?>
+            </ul>
+        </div>
+    </div>
+</nav>
